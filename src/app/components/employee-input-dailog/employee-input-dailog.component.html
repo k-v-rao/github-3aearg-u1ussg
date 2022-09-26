@@ -1,0 +1,23 @@
+<div style="margin-right: auto;margin-right: auto;width: auto;">
+    <h1 mat-dialog-title *ngIf="data.isEdit">Employee Id {{data.emp_id}}</h1>
+    <h1 mat-dialog-title *ngIf="!data.isEdit">Add Employee Details</h1>
+    <div mat-dialog-content>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter a name</mat-label>
+            <input matInput #input maxlength="20" [(ngModel)]="dailogData.name" placeholder="Ex. Rao" [formControl]="employeeName" required>
+            <mat-error *ngIf="employeeName.invalid">{{getNameErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <div class="example-container">
+            <mat-form-field appearance="fill">
+                <mat-label>Enter a email</mat-label>
+                <input matInput placeholder="pat@example.com" [(ngModel)]="dailogData.email" [formControl]="employeeEmail" required>
+                <mat-error *ngIf="employeeEmail.invalid">{{getEmailErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="gradiant" (click)="onNoClick()">Cancel</button>
+        <button mat-raised-button color="gradiant" [mat-dialog-close]="dailogData" cdkFocusInitial [disabled]="employeeEmail.errors||employeeName.errors">Save</button>
+    </div>
+</div>

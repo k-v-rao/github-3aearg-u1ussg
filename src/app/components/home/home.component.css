@@ -1,0 +1,39 @@
+table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.example-card {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+tr.mat-header-row {
+    height: 56px;
+    background-image: linear-gradient(to right, rgb(0, 26, 255), rgb(133, 57, 221), rgb(215, 54, 230));
+    font-size: 60px;
+}
+
+.mat-gradiant {
+    background-image: linear-gradient(to right, rgb(0, 26, 255), rgb(36, 40, 243), rgb(208, 99, 218));
+    border: 2px solid rgb(2, 2, 20) !important;
+}
+
+tr.mat-row:hover {
+    background-color: rgb(205, 236, 226);
+}
+
+.icon-hover:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+th {
+    font-size: 15px;
+}

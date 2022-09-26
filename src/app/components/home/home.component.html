@@ -1,0 +1,43 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <!-- add eployee button to open dailog -->
+        <button mat-raised-button color="gradiant" style="margin-left: 33px;" (click)="addEmployeeData()"> Add Employee</button>
+    </mat-card-header>
+    <mat-card-content style="margin-top: 13px;">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!-- Employee ID Column -->
+            <ng-container matColumnDef="emp_id">
+                <th mat-header-cell *matHeaderCellDef> Emp Id. </th>
+                <td mat-cell *matCellDef="let element"> {{element.emp_id}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+
+            <!-- Email column -->
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef> Email </th>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+
+            <!-- actions column -->
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon style="margin-right:20px ;" (click)="editEmployee(element)" class="icon-hover">edit</mat-icon>
+                    <mat-icon class="icon-hover" (click)="deleteEmployee(element)">delete</mat-icon>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns" [ngClass]="{accent:true}"></tr>
+            <tr mat-row *matRowDef=" let row; columns: displayedColumns; "></tr>
+        </table>
+
+
+    </mat-card-content>
+</mat-card>

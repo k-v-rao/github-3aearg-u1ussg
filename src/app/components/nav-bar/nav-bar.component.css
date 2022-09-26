@@ -1,0 +1,14 @@
+.app-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    /* For macOS/iOS Safari */
+    top: 0;
+    /* Sets the sticky toolbar to be on top */
+    z-index: 1000;
+    /* Ensure that your app's content doesn't overlap the toolbar */
+}
+
+.mat-primary {
+    background-image: linear-gradient(to right, rgb(0, 26, 255), rgb(36, 40, 243), rgb(208, 99, 218));
+    /* border: 2px solid rgb(2, 2, 20) !important; */
+}
